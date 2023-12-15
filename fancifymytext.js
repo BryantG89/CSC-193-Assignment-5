@@ -6,8 +6,7 @@ function biggerButton()
     {
     alert("Hello, world!");
     clickCount++; 
-    }
-
+    
     // Disable radio button after first click
     document.getElementById("biggerButton").disabled = true;
 
@@ -17,11 +16,14 @@ function biggerButton()
         document.getElementById("biggerButton").disabled = false;
 
     }, 1000);
+
+
+    }
 }
 
 function sendAlert() 
 {
-    alert("Radio Button clicked");
+    alert("Radio Buttons clicked");
 }
 
 function applyStyles() {
