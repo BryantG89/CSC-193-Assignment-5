@@ -45,4 +45,8 @@ function removeStyles()
     textArea.style.fontWeight = "normal";
     textArea.style.color = "black";
     textArea.style.textDecoration = "none";
+
+    // Reset the radio buttons
+    document.getElementById("FancyShmancyChoice").checked = false;
+    document.getElementById("idBoringBetty").checked = false;
 }
