@@ -1,6 +1,22 @@
+var clickCount = 0;
+
 function biggerButton() 
 {
+    if (clickCount === 0)
+    {
     alert("Hello, world!");
+    clickCount++; 
+    }
+
+    // Disable radio button after first click
+    document.getElementById("biggerButton").disabled = true;
+
+    // Enable the button with a time delay
+    setTimeout(function()
+    {
+        document.getElementById("biggerButton").disabled = false;
+
+    }, 1000);
 }
 
 function sendAlert() 
