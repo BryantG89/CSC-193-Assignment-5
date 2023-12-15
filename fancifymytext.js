@@ -13,7 +13,7 @@ function biggerButton()
     // Enable the button with a time delay
     setTimeout(function()
     {
-        document.getElementById("biggerButton").disabled = false;
+        document.getElementById("biggerButton").disabled = true;
 
     }, 1000);
 
