@@ -1,36 +1,53 @@
-var clickCount = 0;
+const fancySchmancy = document.getElementById("FancyShmancyChoice");
+const boringBetty = document.getElementById("BoringBettyChoice");
+
+
+fancySchmancy.addEventListener("change", applyStyles);
+boringBetty.addEventListener("change", removeStyles);
+
 
 function biggerButton() 
 {
-    alert("Hello, world!");
+   document.getElementById("textInputArea").style.fontSize = "24px";
 }
 
 function sendAlert() 
 {
-    alert("Radio Buttons clicked");
+    alert("A Font Style Was Chosen");
 }
 
-function applyStyles() {
-    var textArea = document.getElementById("textInputArea");
-    textArea.style.fontSize = "24pt";
-
-    var fancyShmancyRadioButton = document.getElementById("FancyShmancyChoice");
+// Event handler that changes style when fancy schmancy button chosen
+function applyStyles() 
+{
+  var fancyShmancyRadioButton = document.getElementById("FancyShmancyChoice");
     if (fancyShmancyRadioButton.checked) 
     {
+        var textArea = document.getElementById("textInputArea");
+        textArea.style.fontSize = "24px";
         textArea.style.fontWeight = "bold";
         textArea.style.color = "blue";
         textArea.style.textDecoration = "underline";
     }
 }
 
+// Event handler that removes styles 
 function removeStyles() 
 {
-    var textArea = document.getElementById("textInput");
+    var textArea = document.getElementById("textInputArea");
+    textArea.style.fontSize = "12px";
     textArea.style.fontWeight = "normal";
     textArea.style.color = "black";
     textArea.style.textDecoration = "none";
-
-    // Reset the radio buttons
-    document.getElementById("FancyShmancyChoice").checked = false;
-    document.getElementById("idBoringBetty").checked = false;
 }
+
+// function fancifyOption() {
+//     document.getElementById("inputTextArea").style.color = "blue";
+//     document.getElementById("inputTextArea").style.fontWeight = "bold";
+//     document.getElementById("inputTextArea").style.textDecoration = "underline";
+//   }
+  
+//   function boringOption() {
+//     document.getElementById("myTextArea").style.color = "black";
+//     document.getElementById("myTextArea").style.fontWeight = "normal";
+//     document.getElementById("myTextArea").style.textDecoration = "none";
+//   }
