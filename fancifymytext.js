@@ -12,25 +12,30 @@ function biggerButton()
 }
 
 // Event Button for making "moo" string concatenation
-function mooButton()
-{
+function mooButton() {
     var textArea = document.getElementById("textInputArea");
     var upperText = textArea.value.toUpperCase();
     var sentences = upperText.split(/([.!?]+)/);
 
-    for (var i = 0; i < sentences.length; i += 2) 
+    sentences = sentences.map((sentence, index) => 
     {
-    var sentence = sentences[i];
-        if (/\s/.test(sentence)) 
+    // Process every other sentence
+        if (index % 2 === 0) 
         {
-            var words = sentence.split(/\s+/);
-            words[words.length - 1] += "-Moo";
-            sentences[i] = words.join(" ");
+            return sentence
+                .split(/\s+/)
+                .map((word, wordIndex, array) => 
+                {
+                // Add "-Moo" to the last word
+                    return wordIndex === array.length - 1 ? word + "-Moo" : word;
+                })
+                .join(" ");
+        } else 
+        {
+            return sentence;
         }
-    }
-
-    var newtext = sentences.join("");
-    textArea.value = newtext;
+    });
+    textArea.value = sentences.join("");
 }
 
 // Event handler that alerts user when a font style has been picked
